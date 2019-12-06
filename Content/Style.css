@@ -1,0 +1,154 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+html {
+    box-sizing: border-box;
+    margin:0 auto;
+    padding:0;
+}
+body {
+    max-width:1200px;
+    font-family: 'Sulphur Point', sans-serif;
+    font-size: 2em;
+    margin: 0 auto;
+    padding:0;
+    width: 900px;
+}
+#main {
+    margin: 0 auto;
+    width: 1000px;
+} 
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.flex_nav {
+    display: flex;
+    flex-flow: row wrap;
+}
+#logo {
+    flex: 1 0 0;
+    margin-top: 0;
+    margin-left: 2em;
+}
+a.logo {
+    font-family: 'Poiret One', cursive;
+    font-size: 0.6em;
+}
+#page_nav {
+    flex: 5 0 0;
+    border: 1px dashed white;
+    margin-top: 0;
+    margin-bottom: 1em;
+    margin-left: 3em;
+}
+h1 {
+    margin: 0;
+}
+#f {
+    color: #e05915;
+}
+#i {
+    color: #05386B;
+}
+#r {
+    color: #cdd422;
+}
+#e {
+    color: #bccbde;
+}
+.nav_ul {
+    display: inline-block;
+    padding:0;
+}
+.nav_li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 1.5em;
+    color: #173e43;
+    text-shadow: 2px 2px 5px #bccbde;
+    font-size: 0.6em;
+}
+.flex_container {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+}
+.left {
+    flex: 1 0 0;
+    /*padding-left:1.8em; */
+}
+.right {
+    flex: 1 0 0;
+    padding-left: 3em;
+}
+#h2{
+    flex: 1 0 0;
+    text-align:center;
+}
+h2 {
+    font-size: 1em;
+    text-shadow: 2px 2px 2px gray;
+}
+#title,#action {
+    font-size: 0.6em;
+    padding-left: 10em;
+    margin: 0;
+}
+#action {
+    padding-left:0;
+}
+#add_new {
+    flex: 2 0 0;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 30px;
+    font-size: 0.6em;
+}
+#plusicon{
+    display: inline-block;
+    width: 20px;
+}
+.modify {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    padding-left: 2em;
+    font-size:0.6em;
+}
+#page_name {
+    flex: 1 0 0;
+    padding-left: 1em;
+}
+.edit_delete {
+    flex: 1 0 0;
+    
+}
+#edit {
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+    background-color: #97CAEF;
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px lightgrey;
+}
+#delete {
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+    background-color: #CAFAEF;
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px lightgrey;
+}
+.icon {
+    font-size:0.3em;
+    margin-left:3em;
+    padding-top:5em;
+}
+
+
+#footer-p {
+    font-size:0.5em;
+}
