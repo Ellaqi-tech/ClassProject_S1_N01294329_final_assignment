@@ -8,6 +8,7 @@
 
         <div id="sql_debugger" runat="server"></div>
 
+
         <div runat="server" class="flex_container">
 
             <div id="title" class="left">Title</div>
