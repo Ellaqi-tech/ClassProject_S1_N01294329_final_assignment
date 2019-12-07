@@ -21,7 +21,7 @@ namespace final_assign
             if (valid)
             {
                 var db = new HTTP_Page();
-                Dictionary<String, String> page_record = db.FindPage(Int32.Parse(pageid));
+                Dictionary<String, String> page_record = db.UpdatePage(Int32.Parse(pageid));
                 if (page_record.Count > 0)
                 {
                     if (Page.IsPostBack)

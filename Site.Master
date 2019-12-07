@@ -42,7 +42,7 @@
             </div>
             <div id="page_nav">
                 <ul class="nav_ul" >\"Show_Page.aspx?pageid="+ Pageid + "\"
-                    <li class="nav_li"><a runat="server" href="~/Show_Page.aspx?pageid=" +pageid">Home Page</a></li>
+                    <li class="nav_li"><a runat="server" href="~/Page1">Home Page</a></li>
                     <li class="nav_li"><a runat="server" href="~/Page2">Page 2</a></li>
                     <li class="nav_li"><a runat="server" href="~/Page3">Page 3</a></li>
                     <li class="nav_li"><a runat="server" href="~/page4">Page 4</a></li>
