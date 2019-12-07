@@ -236,9 +236,8 @@
     <Compile Include="Page3.aspx.designer.cs">
       <DependentUpon>Page3.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pageController.cs" />
-    <Compile Include="pagedb.cs" />
-    <Compile Include="pages.cs" />
+    <Compile Include="PageController.cs" />
+    <Compile Include="Pages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Show_Page.aspx.cs">
       <DependentUpon>Show_Page.aspx</DependentUpon>

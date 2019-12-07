@@ -13,27 +13,40 @@ namespace final_assign
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // We only want to show the data when
+            //the user visits the page for the first time
+            //make sure to 
+            if (!Page.IsPostBack)
+            {
+                //this connection instance is for showing data
+                PageController controller = new PageController();
+                //ShowPageInfo(controller);
+            }
+        }
+        protected void Delete_page(object sender, EventArgs e)
+        {
+            //this connection instance is for editing data
+            PageController controller = new PageController();
+
             bool valid = true;
             string pageid = Request.QueryString["pageid"];
             if (String.IsNullOrEmpty(pageid)) valid = false;
-            //attempt to get the record we need
             if (valid)
             {
-                var db = new HTTP_Page();
-                Dictionary<String, String> page_record = db.FindPage(Int32.Parse(pageid));
-                if (page_record.Count > 0)
+                //Pages new_page = new Pages();
+                //set that student data
+                //new_page.SetPtitle(title.Text);
+                //new_page.SetPbody(body.Text);
+
+                //add the student to the database
+                try
                 {
-                    if (Page.IsPostBack)
-                    {
-                        string query = "DELETE FROM page WHERE pageid =" + pageid;
-                        var deletedb = new HTTP_Page();
-                        int delete = deletedb.Modify_Query(query);
-                        Response.Redirect("~/Customer_Home.aspx");
-                    }
-                    else
-                    {
-                        valid = false;
-                    }
+                    controller.DeletePage(Int32.Parse(pageid));
+                    Response.Redirect("ShowPage.aspx?pageid=" + pageid);
+                }
+                catch
+                {
+                    valid = false;
                 }
             }
         }

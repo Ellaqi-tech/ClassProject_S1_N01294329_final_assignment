@@ -13,13 +13,9 @@ namespace final_assign
     {
         protected void Page_Load(object sender, EventArgs e)
         {   //reset the result set window:
-            page_name.InnerHtml = "";
-            //string searchkey = "";
-            //if (Page.IsPostBack)
-            //{
-                //nothing, because no search function
-            //}
-            string query = "SELECT pagetitle FROM page";
+            page_result.InnerHtml = "";
+
+            string query = "SELECT pageid, pagetitle FROM page";
 
             sql_debugger.InnerHtml = query;
 
@@ -27,12 +23,20 @@ namespace final_assign
             List<Dictionary<String, String>> rs = db.List_Query(query);
             foreach (Dictionary<String,String> row in rs)
             {
-                //string Pageid = row["pageid"];
+                page_result.InnerHtml += "<div class=\"flex_container\">";
+
                 string Pageid = row["pageid"];
+
                 string Pagetitle = row["pagetitle"];
-                page_name.InnerHtml += "<a href=\"Show_Page.aspx?pageid="+ Pageid + "\">" + Pagetitle + "</a>";
-                //page_name.InnerHtml += "hello";
+
+                page_result.InnerHtml += "<div class=\"left\"><a href=\"ShowPage.aspx?pageid=" + Pageid + "\">" + Pagetitle + "</a></div>";
+
+                page_result.InnerHtml += "<div class=\"right\">" + "<a href =\"UpdatePage.aspx?pageid=" + Pageid + "\">" + "Edit" + "</a>" + " " + " " + " " + "<a href =\"DeletePage.aspx?pageid=" + Pageid + "\">" + "Delete" + "</a></div>";
+
+                page_result.InnerHtml += "</div>";
             }
+
         }
     }
 }
+

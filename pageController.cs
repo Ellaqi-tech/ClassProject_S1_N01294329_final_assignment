@@ -7,9 +7,83 @@ using System.Diagnostics;
 
 namespace final_assign
 {
-    public class pageController : HTTP_Page
+    public class PageController : HTTP_Page
     {
-        public void AddPage(pages new_page)
+        //The objective of this method in the schooldb class is to find a particular student given an integer ID
+        //instead of returning a dictionary we will return type "STUDENT" in our Student.cs class
+        public Pages FindPage(int id)
+        {
+            //Utilize the connection string
+            MySqlConnection Connect = new MySqlConnection(ConnectionString);
+            //create a "blank" student so that our method can return something if we're not successful catching student data
+            Pages result_page = new Pages();
+
+            //we will try to grab student data from the database, if we fail, a message will appear in Debug>Windows>Output dialogue
+            try
+            {
+                //Build a custom query with the id information provided
+                string query = "SELECT * FROM page where pageid = " + id;
+                Debug.WriteLine("Connection Initialized...");
+                //open the db connection
+                Connect.Open();
+                //Run out query against the database
+                MySqlCommand cmd = new MySqlCommand(query, Connect);
+                //grab the result set
+                MySqlDataReader resultset = cmd.ExecuteReader();
+
+                //Create a list of students (although we're only trying to get 1)
+                List<Pages> pages = new List<Pages>();
+
+                //read through the result set
+                while (resultset.Read())
+                {
+                    //information that will store a single student
+                    Pages currentpage = new Pages();
+
+                    //Look at each column in the result set row, add both the column name and the column value to our Student dictionary
+                    for (int i = 0; i < resultset.FieldCount; i++)
+                    {
+                        string key = resultset.GetName(i);
+                        if (resultset.IsDBNull(i)) continue;
+                        string value = resultset.GetString(i);
+                        Debug.WriteLine("Attempting to transfer " + key + " data of " + value);
+                        //can't just generically put data into a dictionary anymore
+                        //must go through each column one by one to insert data into the right property
+                        switch (key)
+                        {
+                            case "pagetitle":
+                                currentpage.SetPtitle(value);
+                                break;
+                            case "pagebody":
+                                currentpage.SetPbody(value);
+                                break;
+                        }
+
+                    }
+                    //Add the student to the list of students
+                    pages.Add(currentpage);//????????????????????/what's pages for?
+                }
+
+                result_page = pages[0]; //get the first student
+
+            }
+            catch (Exception ex)
+            {
+                //If something (anything) goes wrong with the try{} block, this block will execute
+                Debug.WriteLine("Something went wrong in the find Student method!");
+                Debug.WriteLine(ex.ToString());
+            }
+
+            Connect.Close();
+            Debug.WriteLine("Database Connection Terminated.");
+
+            return result_page;
+        }
+
+
+
+
+        public void AddPage(Pages new_page)
         {
             //slightly better way of injecting data into strings
 
@@ -17,7 +91,6 @@ namespace final_assign
             query = String.Format(query, new_page.GetPtitle(), new_page.GetPbody());
 
             //This technique is still sensitive to SQL injection
-            //
 
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
             MySqlCommand cmd = new MySqlCommand(query, Connect);
@@ -37,7 +110,7 @@ namespace final_assign
         }
 
 
-        public void UpdatePage(int pageid, pages new_page)
+        public void UpdatePage(int pageid, Pages new_page)
         {
             //slightly better way of injecting data into strings
             //the below technique is known as string formatting. It allows us to make strings without "" + ""
@@ -67,6 +140,31 @@ namespace final_assign
 
         public void DeletePage(int pageid)
         {
+            //slightly better way of injecting data into strings
+
+            string query = "delete from page where pageid = {0}";
+            query = String.Format(query, pageid);
+
+            //This technique is still sensitive to SQL injection
+
+            MySqlConnection Connect = new MySqlConnection(ConnectionString);
+            MySqlCommand cmd = new MySqlCommand(query, Connect);
+            try
+            {
+                Connect.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Something went wrong in the DeletePage Method!");
+                Debug.WriteLine(ex.ToString());
+            }
+
+            Connect.Close();
+        }
+        /*public void DeletePage(int pageid)
+        {
             //deleting a student will require us to modify two tables
             //one table is the studentsxclasses table (deleting where the studentid is specified)
             //one table is the students table (to delete the student)
@@ -75,23 +173,23 @@ namespace final_assign
 
             //DELETING ON THE PRIMARY KEY OF STUDENTS
             string removepage = "delete from page where pageid = {0}";
-            removepage = String.Format(removepage, pageid);
+            //removepage = String.Format(removepage, pageid);
 
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
             //This command removes all the target student's classes from the studentsxclasses table
-            MySqlCommand cmd_removepage = new MySqlCommand(removepage, Connect);
+            //MySqlCommand cmd_removepage = new MySqlCommand(removepage, Connect);
             //This command removes the particular student from the table
-            MySqlCommand cmd_removespage = new MySqlCommand(removepage, Connect);
+            //MySqlCommand cmd_removespage = new MySqlCommand(removepage, Connect);
             try
             {
                 //try to execute both commands!
                 Connect.Open();
                 //remember to remove the relational element first
-                cmd_removepage.ExecuteNonQuery();
-                Debug.WriteLine("Executed query " + cmd_removepage);
+                //cmd_removepage.ExecuteNonQuery();
+                //Debug.WriteLine("Executed query " + cmd_removepage);
                 //then delete the main record
-                cmd_removepage.ExecuteNonQuery();
-                Debug.WriteLine("Executed query " + cmd_removepage);
+                //cmd_removepage.ExecuteNonQuery();
+                //Debug.WriteLine("Executed query " + cmd_removepage);
             }
             catch (Exception ex)
             {
@@ -101,6 +199,6 @@ namespace final_assign
             }
 
             Connect.Close();
-        }
+        }*/
     }
 }

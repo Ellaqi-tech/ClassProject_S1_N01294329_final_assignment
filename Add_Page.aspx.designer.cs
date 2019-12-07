@@ -11,26 +11,26 @@ namespace final_assign
 {
 
 
-    public partial class add_page
+    public partial class Add_Page
     {
 
         /// <summary>
-        /// sitename control.
+        /// title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sitename;
+        protected global::System.Web.UI.WebControls.TextBox title;
 
         /// <summary>
-        /// h2 control.
+        /// body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox h2;
+        protected global::System.Web.UI.WebControls.TextBox body;
 
         /// <summary>
         /// nav_text control.

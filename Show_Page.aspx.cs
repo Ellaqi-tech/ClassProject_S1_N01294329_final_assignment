@@ -13,7 +13,61 @@ namespace final_assign
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //reset content
+            PageController controller = new PageController();
+            //showing the base record student information
+            //ShowPageInfo(controller);
+            //showing the classes the student is currently enrolled in
+            //ListStudentEnrollment(controller);
+            //populate the dropdownlist for classes for the student to pick
+            /*if (!Page.IsPostBack)
+            {
+                FillClassOptions(controller);
+            }*/
+
+/*            protected void Delete_page(object sender, EventArgs e)
+            {
+                bool valid = true;
+                string pageid = Request.QueryString["pageid"];
+                if (String.IsNullOrEmpty(pageid)) valid = false;
+
+                PageController controller = new PageController();
+
+                //deleting the student from the system
+                if (valid)
+                {
+                    controller.DeleteStudent(Int32.Parse(pageid));
+                    Response.Redirect("ListStudents.aspx");
+                }
+            }
+
+            protected void ShowPageInfo(PageController controller)
+            {
+
+                bool valid = true;
+                string pageid = Request.QueryString["pageid"];
+                if (String.IsNullOrEmpty(pageid)) valid = false;
+
+                //We will attempt to get the record we need
+                if (valid)
+                {
+
+                    Pages page_record = controller.FindPage(Int32.Parse(pageid));
+                    title.Text = page_record.GetPtitle() + " " + page_record.GetPbody();
+                    body.Text = page_record.GetPbody();
+                }
+
+                if (!valid)
+                {
+                    showerror.InnerHtml = "There was an error finding that page.";
+                }
+            }*/
+
+
+           
+            
+            
+            //first try:
+            /*//reset content
             title.InnerHtml = "";
             body.InnerHtml = "";
             // modification
@@ -53,7 +107,7 @@ namespace final_assign
                 {
                     valid = false;
                 }
-            }
+            }*/
         }
     }
 }

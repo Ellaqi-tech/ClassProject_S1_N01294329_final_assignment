@@ -21,7 +21,7 @@ namespace final_assign
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl title;
+        protected global::System.Web.UI.WebControls.TextBox title;
 
         /// <summary>
         /// body control.
@@ -30,6 +30,15 @@ namespace final_assign
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl body;
+        protected global::System.Web.UI.WebControls.TextBox body;
+
+        /// <summary>
+        /// showerror control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl showerror;
     }
 }

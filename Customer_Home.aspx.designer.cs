@@ -33,30 +33,12 @@ namespace final_assign
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl sql_debugger;
 
         /// <summary>
-        /// page_name control.
+        /// page_result control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl page_name;
-
-        /// <summary>
-        /// edit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl edit;
-
-        /// <summary>
-        /// delete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl delete;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl page_result;
     }
 }

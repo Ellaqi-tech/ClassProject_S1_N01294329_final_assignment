@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace final_assign
 {
-    public class pages
+    public class Pages
     {
         /*
          These fields are private cannot be accessed normally
@@ -15,6 +15,7 @@ namespace final_assign
             set like Student.Fname = "Christine"
             get like Student.Fname ==> returns "Christine"
          */
+        private string Pid;
         private string Ptitle;
         private string Pbody;
 
@@ -27,6 +28,10 @@ namespace final_assign
         //methods which return the private content requested
         //if we want the firstname we use
         //student.GetFname(); ==> returns "Christine"
+        public string GetPid()
+        {
+            return Pid;
+        }
         public string GetPtitle()
         {
             return Ptitle;
@@ -38,6 +43,10 @@ namespace final_assign
         //These methods are used to set values in an object
         //i.e. if I want to change the last name to Bittle
         //student.SetLname("Bittle")
+        public void SetPid(string value)
+        {
+            Pid = value;
+        }
         public void SetPtitle(string value)
         {
             Ptitle = value;
