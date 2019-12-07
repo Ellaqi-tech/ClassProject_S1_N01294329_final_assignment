@@ -31,7 +31,7 @@ namespace final_assign
 
                 page_result.InnerHtml += "<div class=\"left\"><a href=\"ShowPage.aspx?pageid=" + Pageid + "\">" + Pagetitle + "</a></div>";
 
-                page_result.InnerHtml += "<div class=\"right\">" + "<a href =\"UpdatePage.aspx?pageid=" + Pageid + "\">" + "Edit" + "</a>" + " " + " " + " " + "<a href =\"DeletePage.aspx?pageid=" + Pageid + "\">" + "Delete" + "</a></div>";
+                page_result.InnerHtml += "<div class=\"right\">" + "<a href =\"Update_Page.aspx?pageid=" + Pageid + "\">" + "Edit" + "</a>" + " " + " " + " " + "<a href =\"Delete_Page.aspx?pageid=" + Pageid + "\">" + "Delete" + "</a></div>";
 
                 page_result.InnerHtml += "</div>";
             }

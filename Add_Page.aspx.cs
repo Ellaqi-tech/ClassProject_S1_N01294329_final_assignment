@@ -30,7 +30,7 @@ namespace final_assign
             //add the student to the database
             db.AddPage(new_page);
 
-            Response.Redirect("ListStudents.aspx");
+            Response.Redirect("Customer_Home.aspx");
         }
     }
 }

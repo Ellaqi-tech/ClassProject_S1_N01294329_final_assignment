@@ -87,7 +87,7 @@ namespace final_assign
         {
             //slightly better way of injecting data into strings
 
-            string query = "insert into page (pagetitle, pagebody) values ('{a-z}','{a-z}')";
+            string query = "insert into page (pagetitle, pagebody) values ('{0}','{1}')";
             query = String.Format(query, new_page.GetPtitle(), new_page.GetPbody());
 
             //This technique is still sensitive to SQL injection

@@ -4,7 +4,8 @@
     <div>
         <asp:TextBox runat="server" ID="title">
 
-        </asp:TextBox></div>
+        </asp:TextBox>
+    </div>
     <div>
         <asp:TextBox runat="server" ID="body">
 
@@ -12,4 +13,7 @@
     </div>
     <div id="showerror" runat="server">
     </div>
+
+    <asp:Button OnClick="Update_page" Text="Update" runat="server" CssClass="btn" />
+
 </asp:Content>

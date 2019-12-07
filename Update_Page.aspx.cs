@@ -44,7 +44,7 @@ namespace final_assign
                 try
                 {
                     controller.UpdatePage(Int32.Parse(pageid), new_page);
-                    Response.Redirect("ShowPage.aspx?pageid=" + pageid);
+                    Response.Redirect("Show_Page.aspx?pageid=" + pageid);
                 }
                 catch
                 {
