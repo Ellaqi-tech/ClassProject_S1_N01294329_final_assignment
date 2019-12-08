@@ -112,7 +112,7 @@ namespace final_assign
         {
             //slightly better way of injecting data into strings
             //the below technique is known as string formatting. It allows us to make strings without "" + ""
-            string query = "update page set pagetitle='{0}', pagebody='{1}'";
+            string query = "update page set pagetitle='{0}', pagebody='{1}' WHERE pageid={2}";
             query = String.Format(query, new_page.GetPtitle(), new_page.GetPbody(), pageid);
             //The above technique is still sensitive to SQL injection
             //we will learn about parameterized queries in the 2nd semester

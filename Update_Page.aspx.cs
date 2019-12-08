@@ -31,8 +31,8 @@ namespace final_assign
             PageController controller = new PageController();
 
             bool valid = true;
-            string pageid = Request.QueryString["pageid"];
-            if (String.IsNullOrEmpty(pageid)) valid = false;
+            string Pageid = Request.QueryString["pageid"];
+            if (String.IsNullOrEmpty(Pageid)) valid = false;
             if (valid)
             {
                 Pages new_page = new Pages();
@@ -43,8 +43,8 @@ namespace final_assign
                 //add the student to the database
                 try
                 {
-                    controller.UpdatePage(Int32.Parse(pageid), new_page);
-                    Response.Redirect("Show_Page.aspx?pageid=" + pageid);
+                    controller.UpdatePage(Int32.Parse(Pageid), new_page);
+                    Response.Redirect("Show_Page.aspx?pageid=" + Pageid);
                 }
                 catch
                 {

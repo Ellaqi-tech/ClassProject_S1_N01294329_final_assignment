@@ -24,15 +24,6 @@ namespace final_assign
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl manage;
 
         /// <summary>
-        /// sql_debugger control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sql_debugger;
-
-        /// <summary>
         /// page_result control.
         /// </summary>
         /// <remarks>

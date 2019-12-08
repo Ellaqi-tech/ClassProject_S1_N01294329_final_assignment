@@ -10,7 +10,7 @@
 
     <div id="showerror" runat="server">
     </div>
-
+    <a class="left" href="Customer_Home.aspx">Back To List</a>
     <asp:Button OnClientClick="if(!confirm('Are you sure you want to delete this page?')) return false;" OnClick="Delete_page" CssClass="right" Text="Delete" runat="server"/> 
 
     <a class="right" href="Update_Page.aspx?pageid=<%= Request.QueryString["pageid"] %>">Edit</a>

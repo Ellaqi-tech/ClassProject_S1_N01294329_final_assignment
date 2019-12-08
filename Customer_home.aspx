@@ -6,7 +6,7 @@
             <div id="add_new" class="right"><a href="Add_Page.aspx"><img id="plusicon" src="img/plus.png" alt="plus icon" /> Add new page </a></div>
         </div>
 
-        <div id="sql_debugger" runat="server"></div>
+        <%//<div id="sql_debugger" runat="server"></div> %>
 
         <div runat="server" class="flex_container">
 

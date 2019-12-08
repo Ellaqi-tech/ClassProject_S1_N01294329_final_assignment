@@ -17,7 +17,7 @@ namespace final_assign
 
             string query = "SELECT pageid, pagetitle FROM page";
 
-            sql_debugger.InnerHtml = query;
+            //sql_debugger.InnerHtml = query;
 
             var db = new HTTP_Page();
             List<Dictionary<String, String>> rs = db.List_Query(query);
