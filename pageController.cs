@@ -81,8 +81,6 @@ namespace final_assign
         }
 
 
-
-
         public void AddPage(Pages new_page)
         {
             //slightly better way of injecting data into strings
@@ -163,42 +161,5 @@ namespace final_assign
 
             Connect.Close();
         }
-        /*public void DeletePage(int pageid)
-        {
-            //deleting a student will require us to modify two tables
-            //one table is the studentsxclasses table (deleting where the studentid is specified)
-            //one table is the students table (to delete the student)
-            //Note: A MySQL trigger can be set up so that the appropriate studentsxclasses records are deleted
-            //when the student is deleted. Currently this database isn't set up with a trigger
-
-            //DELETING ON THE PRIMARY KEY OF STUDENTS
-            string removepage = "delete from page where pageid = {0}";
-            //removepage = String.Format(removepage, pageid);
-
-            MySqlConnection Connect = new MySqlConnection(ConnectionString);
-            //This command removes all the target student's classes from the studentsxclasses table
-            //MySqlCommand cmd_removepage = new MySqlCommand(removepage, Connect);
-            //This command removes the particular student from the table
-            //MySqlCommand cmd_removespage = new MySqlCommand(removepage, Connect);
-            try
-            {
-                //try to execute both commands!
-                Connect.Open();
-                //remember to remove the relational element first
-                //cmd_removepage.ExecuteNonQuery();
-                //Debug.WriteLine("Executed query " + cmd_removepage);
-                //then delete the main record
-                //cmd_removepage.ExecuteNonQuery();
-                //Debug.WriteLine("Executed query " + cmd_removepage);
-            }
-            catch (Exception ex)
-            {
-                //if this isn't working as intended, you can check debug>windows>output for the error message.
-                Debug.WriteLine("Something went wrong in the delete Page Method!");
-                Debug.WriteLine(ex.ToString());
-            }
-
-            Connect.Close();
-        }*/
     }
 }

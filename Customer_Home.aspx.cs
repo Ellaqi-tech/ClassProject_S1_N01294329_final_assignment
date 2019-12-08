@@ -29,7 +29,7 @@ namespace final_assign
 
                 string Pagetitle = row["pagetitle"];
 
-                page_result.InnerHtml += "<div class=\"left\"><a href=\"ShowPage.aspx?pageid=" + Pageid + "\">" + Pagetitle + "</a></div>";
+                page_result.InnerHtml += "<div class=\"left\"><a href=\"Show_Page.aspx?pageid=" + Pageid + "\">" + Pagetitle + "</a></div>";
 
                 page_result.InnerHtml += "<div class=\"right\">" + "<a href =\"Update_Page.aspx?pageid=" + Pageid + "\">" + "Edit" + "</a>" + " " + " " + " " + "<a href =\"Delete_Page.aspx?pageid=" + Pageid + "\">" + "Delete" + "</a></div>";
 

@@ -15,16 +15,10 @@ namespace final_assign
         {
             PageController controller = new PageController();
             //showing the base record student information
-            //ShowPageInfo(controller);
-            //showing the classes the student is currently enrolled in
-            //ListStudentEnrollment(controller);
-            //populate the dropdownlist for classes for the student to pick
-            /*if (!Page.IsPostBack)
-            {
-                FillClassOptions(controller);
-            }*/
+            ShowPageInfo(controller);
+        }
 
-/*            protected void Delete_page(object sender, EventArgs e)
+            protected void Delete_page(object sender, EventArgs e)
             {
                 bool valid = true;
                 string pageid = Request.QueryString["pageid"];
@@ -35,8 +29,8 @@ namespace final_assign
                 //deleting the student from the system
                 if (valid)
                 {
-                    controller.DeleteStudent(Int32.Parse(pageid));
-                    Response.Redirect("ListStudents.aspx");
+                    controller.DeletePage(Int32.Parse(pageid));
+                    Response.Redirect("Show_Page.aspx");
                 }
             }
 
@@ -50,17 +44,21 @@ namespace final_assign
                 //We will attempt to get the record we need
                 if (valid)
                 {
-
                     Pages page_record = controller.FindPage(Int32.Parse(pageid));
-                    title.Text = page_record.GetPtitle() + " " + page_record.GetPbody();
-                    body.Text = page_record.GetPbody();
-                }
+
+                    ptitle.InnerHtml = page_record.GetPtitle();
+                    pbody.InnerHtml = page_record.GetPbody();
+            }
+            else
+            {
+                valid = false;
+            }
 
                 if (!valid)
                 {
                     showerror.InnerHtml = "There was an error finding that page.";
                 }
-            }*/
+            }
 
 
            
@@ -108,6 +106,6 @@ namespace final_assign
                     valid = false;
                 }
             }*/
-        }
+        
     }
 }

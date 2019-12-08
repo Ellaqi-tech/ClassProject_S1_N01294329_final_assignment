@@ -13,42 +13,38 @@ namespace final_assign
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // We only want to show the data when
-            //the user visits the page for the first time
-            //make sure to 
+            PageController controller = new PageController();
+            string pageid = Request.QueryString["pageid"];
+            string pagetitle = Request.QueryString["pagetitle"];
+
             if (!Page.IsPostBack)
             {
-                //this connection instance is for showing data
-                PageController controller = new PageController();
-                //ShowPageInfo(controller);
+                ShowConfirmation(pageid, pagetitle, controller);
             }
         }
+        public void ShowConfirmation(string pageid, string pagetitle, PageController controller)
+        {
+            string query = "SELECT * FROM page WHERE pageid = {0}";
+            query = String.Format(query, pageid, pagetitle);
+            List<Dictionary<String, String>> rs = controller.List_Query(query);
+            //first item (should only be one) is the record of enrolment between a student and a class
+            Dictionary<String, String> pagerecord = rs.First();
+            ptitle.InnerHtml = pagerecord["pagetitle"];
+            
+        }
+
         protected void Delete_page(object sender, EventArgs e)
         {
-            //this connection instance is for editing data
+            //todo: validation on these ids
+            string pageid = Request.QueryString["pageid"];
+            string pagetitle = Request.QueryString["pagetitle"];
+
             PageController controller = new PageController();
 
-            bool valid = true;
-            string pageid = Request.QueryString["pageid"];
-            if (String.IsNullOrEmpty(pageid)) valid = false;
-            if (valid)
-            {
-                //Pages new_page = new Pages();
-                //set that student data
-                //new_page.SetPtitle(title.Text);
-                //new_page.SetPbody(body.Text);
+            controller.DeletePage(Int32.Parse(pageid));
+            Response.Redirect("Customer_Home.aspx");
 
-                //add the student to the database
-                try
-                {
-                    controller.DeletePage(Int32.Parse(pageid));
-                    Response.Redirect("ShowPage.aspx?pageid=" + pageid);
-                }
-                catch
-                {
-                    valid = false;
-                }
-            }
+
         }
     }
 }

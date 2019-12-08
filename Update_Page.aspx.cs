@@ -50,7 +50,6 @@ namespace final_assign
                 {
                     valid = false;
                 }
-
             }
 
             if (!valid)
@@ -72,7 +71,7 @@ namespace final_assign
             {
 
                 Pages page_record = controller.FindPage(Int32.Parse(pageid));
-                title.Text = page_record.GetPtitle() + " " + page_record.GetPbody();
+                title.Text = page_record.GetPtitle();
                 body.Text = page_record.GetPbody();
             }
 
