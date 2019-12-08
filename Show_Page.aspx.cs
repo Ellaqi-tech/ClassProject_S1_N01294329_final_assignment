@@ -59,53 +59,11 @@ namespace final_assign
                     showerror.InnerHtml = "There was an error finding that page.";
                 }
             }
-
-
-           
-            
-            
-            //first try:
-            /*//reset content
-            title.InnerHtml = "";
-            body.InnerHtml = "";
-            // modification
-            bool valid = true;
-            string pageid = Request.QueryString["pageid"];
-
-            if (String.IsNullOrEmpty(pageid)) valid = false;
-
-            //attempt to get the page record
-            if (valid)
-            {
-                var db = new HTTP_Page();
-                Dictionary<String, String> page_record = db.FindPage(Int32.Parse(pageid));
-
-                if (page_record.Count > 0)
-                {
-                    title.InnerHtml = page_record["pagetitle"];
-                    body.InnerHtml = page_record["pagebody"];
-
-                    //render loop for postback if user submit and user input valid
-                    if (Page.IsPostBack)
-                    {
-                        string query = "SELECT * FROM page";
-
-                        var pagedb = new HTTP_Page();
-                        List<Dictionary<String, String>> rs = pagedb.List_Query(query);
-                        foreach(Dictionary<String,String> row in rs)
-                        {
-                            string Pagetitle = row["pagetitle"];
-                            string Pagebody = row["pagebody"];
-                            title.InnerHtml += Pagetitle;
-                            body.InnerHtml += Pagebody;
-                        } 
-                    }
-                }
-                else
-                {
-                    valid = false;
-                }
-            }*/
-        
+        /* 
+        Author: Christine ;
+        Site: https://github.com/christinebittle/crud_essentials ;
+        Date accessed: Dec 07 2019 ;
+        Using purpose: to show page record;
+        */
     }
 }

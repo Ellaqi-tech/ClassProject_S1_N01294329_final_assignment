@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Firework Website Editor" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Customer_Home.aspx.cs" Inherits="final_assign.Customer_Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
     <div id="main">
         <div runat="server" id="manage" class="flex_container">
             <div id="h2" class="left"><h2>Manage Pages </h2></div>

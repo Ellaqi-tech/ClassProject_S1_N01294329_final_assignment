@@ -55,5 +55,11 @@ namespace final_assign
         {
             Pbody = value;
         }
+        /* 
+        Author: Christine ;
+        Site: https://github.com/christinebittle/crud_essentials ;
+        Date accessed: Dec 05 2019 ;
+        Using purpose: to set and get page table values;
+        */
     }
 }

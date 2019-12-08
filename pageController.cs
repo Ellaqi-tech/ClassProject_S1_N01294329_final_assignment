@@ -9,16 +9,16 @@ namespace final_assign
 {
     public class PageController : HTTP_Page
     {
-        //The objective of this method in the schooldb class is to find a particular student given an integer ID
-        //instead of returning a dictionary we will return type "STUDENT" in our Student.cs class
+        //The objective of this method in the schooldb class is to find a particular page given an integer ID
+        //instead of returning a dictionary we will return type "page" in our pages.cs class
         public Pages FindPage(int id)
         {
             //Utilize the connection string
             MySqlConnection Connect = new MySqlConnection(ConnectionString);
-            //create a "blank" student so that our method can return something if we're not successful catching student data
+            //create a "blank" page so that our method can return something if we're not successful catching page data
             Pages result_page = new Pages();
 
-            //we will try to grab student data from the database, if we fail, a message will appear in Debug>Windows>Output dialogue
+            //we will try to grab page data from the database, if we fail, a message will appear in Debug>Windows>Output dialogue
             try
             {
                 //Build a custom query with the id information provided
@@ -31,16 +31,16 @@ namespace final_assign
                 //grab the result set
                 MySqlDataReader resultset = cmd.ExecuteReader();
 
-                //Create a list of students (although we're only trying to get 1)
+                //Create a list of pages (although we're only trying to get 1)
                 List<Pages> pages = new List<Pages>();
 
                 //read through the result set
                 while (resultset.Read())
                 {
-                    //information that will store a single student
+                    //information that will store a single page
                     Pages currentpage = new Pages();
 
-                    //Look at each column in the result set row, add both the column name and the column value to our Student dictionary
+                    //Look at each column in the result set row, add both the column name and the column value to page dictionary
                     for (int i = 0; i < resultset.FieldCount; i++)
                     {
                         string key = resultset.GetName(i);
@@ -60,17 +60,17 @@ namespace final_assign
                         }
 
                     }
-                    //Add the student to the list of students
-                    pages.Add(currentpage);//????????????????????/what's pages for?
+                    //Add the page to the list of pages
+                    pages.Add(currentpage);
                 }
 
-                result_page = pages[0]; //get the first student
+                result_page = pages[0]; //get the first page
 
             }
             catch (Exception ex)
             {
                 //If something (anything) goes wrong with the try{} block, this block will execute
-                Debug.WriteLine("Something went wrong in the find Student method!");
+                Debug.WriteLine("Something went wrong in the find Page method!");
                 Debug.WriteLine(ex.ToString());
             }
 
@@ -121,7 +121,7 @@ namespace final_assign
             MySqlCommand cmd = new MySqlCommand(query, Connect);
             try
             {
-                //Try to update a student with the information provided to us.
+                //Try to update a page with the information provided to us.
                 Connect.Open();
                 cmd.ExecuteNonQuery();
                 Debug.WriteLine("Executed query " + query);
@@ -140,7 +140,7 @@ namespace final_assign
         {
             //slightly better way of injecting data into strings
 
-            string query = "delete from page where pageid = {0}";
+            string query = "delete from page where pageid = {0} ";
             query = String.Format(query, pageid);
 
             //This technique is still sensitive to SQL injection
@@ -161,5 +161,11 @@ namespace final_assign
 
             Connect.Close();
         }
+        /* 
+        Author: Christine ;
+        Site: https://github.com/christinebittle/crud_essentials ;
+        Date accessed: Dec 07 2019 ;
+        Using purpose: to make pagecontroller;
+        */
     }
 }

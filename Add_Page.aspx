@@ -2,14 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="Content/AddStyle.css" type="text/css" media="screen" /> 
     
-    <div>
+    <div id="ptitle">
         <asp:TextBox runat="server" ID="title"> Page Title </asp:TextBox>
+        <asp:RequiredFieldValidator runat="server" ControlToValidate="title" EnableClientScript="true" ErrorMessage="Please enter a page title."></asp:RequiredFieldValidator>
     </div>
   
     <div id="main">
         <asp:TextBox runat="server" ID="body"> Page Content </asp:TextBox>
+        <asp:RequiredFieldValidator runat="server" ControlToValidate="body" EnableClientScript="true" ErrorMessage="Please enter article content."></asp:RequiredFieldValidator>
     </div>
 
-    <asp:Button OnClick="Add_page" Text="Add a new page" runat="server" CssClass="btn" />
+    <asp:Button OnClick="Add_page" Text="Add page" runat="server" CssClass="btn" />
 
 </asp:Content>

@@ -71,10 +71,10 @@ namespace final_assign
             return ResultSet;
         }
         /* 
-            author: Christine ;
-            site: https://github.com/christinebittle/crud_essentials ;
-            date accessed: Nov 18 2019 ;
-            using purpose: to access the selected information from school database;
+        Author: Christine ;
+        Site: https://github.com/christinebittle/crud_essentials ;
+        Date accessed: Dec 07 2019 ;
+        Using purpose: set page class;
         */
     }
 }

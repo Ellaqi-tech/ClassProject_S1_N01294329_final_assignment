@@ -31,12 +31,17 @@ namespace final_assign
 
                 page_result.InnerHtml += "<div class=\"left\"><a href=\"Show_Page.aspx?pageid=" + Pageid + "\">" + Pagetitle + "</a></div>";
 
-                page_result.InnerHtml += "<div class=\"right\">" + "<a href =\"Update_Page.aspx?pageid=" + Pageid + "\">" + "Edit" + "</a>" + " " + " " + " " + "<a href =\"Delete_Page.aspx?pageid=" + Pageid + "\">" + "Delete" + "</a></div>";
+                page_result.InnerHtml += "<div class=\"right\">" + "<a href =\"Update_Page.aspx?pageid=" + Pageid + "\" class=\"edit\">" + "Edit" + "</a>" + " " + " " + " " + "<a href =\"Delete_Page.aspx?pageid=" + Pageid + "\" class=\"delete\">" + "Delete" + "</a></div>";
 
                 page_result.InnerHtml += "</div>";
             }
-
         }
+        /* 
+        Author: Christine ;
+        Site: https://github.com/christinebittle/crud_essentials ;
+        Date accessed: Dec 07 2019 ;
+        Using purpose: to access table page information;
+        */
     }
 }
 

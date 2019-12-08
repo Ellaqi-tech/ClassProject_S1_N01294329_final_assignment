@@ -27,7 +27,7 @@ namespace final_assign
             string query = "SELECT * FROM page WHERE pageid = {0}";
             query = String.Format(query, pageid, pagetitle);
             List<Dictionary<String, String>> rs = controller.List_Query(query);
-            //first item (should only be one) is the record of enrolment between a student and a class
+            //first item (should only be one) is the record of enrolment between a page and a class
             Dictionary<String, String> pagerecord = rs.First();
             ptitle.InnerHtml = pagerecord["pagetitle"];
             
@@ -43,8 +43,12 @@ namespace final_assign
 
             controller.DeletePage(Int32.Parse(pageid));
             Response.Redirect("Customer_Home.aspx");
-
-
         }
+        /* 
+        Author: Christine ;
+        Site: https://github.com/christinebittle/crud_essentials ;
+        Date accessed: Dec 07 2019 ;
+        Using purpose: to delete table page information by user modification ;
+        */
     }
 }

@@ -5,10 +5,27 @@ html {
 
 body {
     font-family: 'Sulphur Point', sans-serif;
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin: 0 auto;
 }
-h1,.title,.p {
-    text-align:center;
-    
+#container {
+    font-size: 0.6em;
+    margin-top:1.5em;
+    margin-bottom: 1.8em;
 }
+#ptitle {
+    margin-bottom: 1em;
+}
+#pbody {
+    margin-bottom: 2em;
+    margin-top: 1em;
+    font-size: 0.5em;
+    width: 500px;
+}
+.action {
+    display: inline-block;
+    margin-right: 2.2em;
+    font-size: 1.2em;
+
+}
+

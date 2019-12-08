@@ -36,11 +36,11 @@ namespace final_assign
             if (valid)
             {
                 Pages new_page = new Pages();
-                //set that student data
+                //set that page data
                 new_page.SetPtitle(title.Text);
                 new_page.SetPbody(body.Text);
 
-                //add the student to the database
+                //add the page to the database
                 try
                 {
                     controller.UpdatePage(Int32.Parse(Pageid), new_page);
@@ -54,7 +54,7 @@ namespace final_assign
 
             if (!valid)
             {
-                showerror.InnerHtml = "There was an error updating that student.";
+                showerror.InnerHtml = "There was an error updating that page.";
             }
 
         }
@@ -80,5 +80,11 @@ namespace final_assign
                 showerror.InnerHtml = "There was an error finding that page.";
             }
         }
+        /* 
+        Author: Christine ;
+        Site: https://github.com/christinebittle/crud_essentials ;
+        Date accessed: Dec 07 2019 ;
+        Using purpose: to update table page information by user modification ;
+        */
     }
 }

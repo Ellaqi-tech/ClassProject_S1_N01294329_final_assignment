@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace final_assign {
-    
-    
-    public partial class SiteMaster {
-        
+namespace final_assign
+{
+
+
+    public partial class SiteMaster
+    {
+
+        /// <summary>
+        /// page_nav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl page_nav;
+
         /// <summary>
         /// MainContent control.
         /// </summary>
