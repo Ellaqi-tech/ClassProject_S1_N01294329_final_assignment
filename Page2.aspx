@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="WHAT WE DO" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Page2.aspx.cs" Inherits="final_assign.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="Content/ViewStyle.css" type="text/css" media="screen" />
+    This page is unnecessary for this assignment. It's just an draft idael layout for show page interface.
+    In order to further improve this project in the future.
     <div id="h1"><h1>WHAT WE DO</h1></div>
     <div class="title"><h2>Oceana is dedicated to protecting and restoring our oceans.</h2></div>
     <div class="p">

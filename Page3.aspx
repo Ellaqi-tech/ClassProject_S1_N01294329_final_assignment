@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="Our Campaigns" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Page3.aspx.cs" Inherits="final_assign.Page3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="Content/ViewStyle.css" type="text/css" media="screen" />
+    This page is unnecessary for this assignment. It's just an draft idael layout for show page interface.
+    In order to further improve this project in the future.
     <div id="h1"><h1>Our Campaigns</h1></div>
     <div class="title"><h2>Oceana Canada campaigns for national policies that rebuild fisheries and return Canada’s formerly vibrant oceans to health.</h2></div>
     <div class="p">

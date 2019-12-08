@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="DONATE" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Page4.aspx.cs" Inherits="final_assign.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="Content/ViewStyle.css" type="text/css" media="screen" />
+    This page is unnecessary for this assignment. It's just an draft idael layout for show page interface.
+    In order to further improve this project in the future.
     <div id="h1"><h1>Donate to Oceana</h1></div>
     <div class="title"><h2>IT’S TIME TO PROTECT OUR OCEANS</h2></div>
     <div class="p">
