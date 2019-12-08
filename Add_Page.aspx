@@ -11,6 +11,12 @@
         <asp:TextBox runat="server" ID="body"> Page Content </asp:TextBox>
         <asp:RequiredFieldValidator runat="server" ControlToValidate="body" EnableClientScript="true" ErrorMessage="Please enter article content."></asp:RequiredFieldValidator>
     </div>
+    <%/* 
+        Author: MrRoy ;
+        Site: https://stackoverflow.com/questions/5853073/change-the-textbox-height ;
+        Date accessed: Dec 07 2019 ;
+        Using purpose: try to set the textbox height, but failed;
+        */ %>
 
     <asp:Button OnClick="Add_page" Text="Add page" runat="server" CssClass="btn" />
 

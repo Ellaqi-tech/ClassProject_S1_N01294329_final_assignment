@@ -86,6 +86,14 @@ namespace final_assign
             //slightly better way of injecting data into strings
 
             string query = "insert into page (pagetitle, pagebody) values ('{0}','{1}')";
+            //You are printing a formatted string. The {0} means to insert the first parameter following the format string; in this case the value associated with the key "rtf".
+            /* 
+            Author: Daniel LeCheminant ;
+            Site: https://stackoverflow.com/questions/530539/what-does-0-mean-when-found-in-a-string-in-c ;
+            Date accessed: Dec 07 2019 ;
+            Using purpose: to figue out part of Christine's code ;
+            */
+
             query = String.Format(query, new_page.GetPtitle(), new_page.GetPbody());
 
             //This technique is still sensitive to SQL injection
@@ -141,6 +149,15 @@ namespace final_assign
             //slightly better way of injecting data into strings
 
             string query = "delete from page where pageid = {0} ";
+            //added "ALTER TABLE page AUTO_INCREMENT = 1" before to reset auto_increment, in order to fix the pageid after deleted some pages;
+            //however, it doesn't work in the right way 
+            /* 
+            Author: Niels ;
+            Site: https://stackoverflow.com/questions/8923114/how-to-reset-auto-increment-in-mysql ;
+            Date accessed: Dec 07 2019 ;
+            Using purpose: to fix the disordered pageid;
+            */
+
             query = String.Format(query, pageid);
 
             //This technique is still sensitive to SQL injection
